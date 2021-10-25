@@ -7,7 +7,7 @@ import {abi} from "./utils/abi.json";
 
 const TWITTER_HANDLE = '@queso';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-const CONTRACT_ADDRESS = "0x322B58984ee05f982d95B1C2FeF64D3C85692Cf5"
+const CONTRACT_ADDRESS = "0xcE6c8Dc40D1CB65726279b0407D5CafC5dc185C9"
 
 const App = () => {
 
@@ -73,7 +73,7 @@ const App = () => {
 
         console.log(parseInt(await connectedContract.getMintedNft()), 'here');
         // console.log('bal',provider.getBalance(CONTRACT_ADDRESS).then(b => console.log(parseInt(b))));
-        let nftTxn = await connectedContract.makeAnEpicNFT({value: 0.005 * 10**18});
+        let nftTxn = await connectedContract.makeAnEpicNFT({value: 0.0069 * 10**18});
         setMinting(true);
         nftTxn.wait();
         console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`);
@@ -106,6 +106,7 @@ const App = () => {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
+        console.log('bal',provider.getBalance(CONTRACT_ADDRESS).then(b => console.log(parseInt(b))));
 
         let nftTxn = await connectedContract.withdraw();
         nftTxn.wait();
@@ -145,7 +146,7 @@ const App = () => {
               href={openseaLink}
               target="_blank"
               rel="noreferrer"
-          >Opensea link here</a>
+          >3d version available here</a>
           }
           <div>
             {svgContent &&  <img width={350} src={svgContent}/>}
