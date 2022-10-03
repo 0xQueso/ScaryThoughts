@@ -5,7 +5,7 @@ import {ethers} from "ethers";
 import {abi} from "./utils/abi.json";
 
 
-const TWITTER_HANDLE = '@queso';
+const TWITTER_HANDLE = '@queue';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const CONTRACT_ADDRESS = "0xcE6c8Dc40D1CB65726279b0407D5CafC5dc185C9"
 
